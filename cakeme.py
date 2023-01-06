@@ -11,7 +11,6 @@ class RedirectRequestHandler(socketserver.BaseRequestHandler):
         # Receive data from the client (if needed)
         # data = self.request.recv(1024)
 
-        # Send the redirect response to the client
         response = f"HTTP/1.1 302 Found\nLocation: {url}\n\n"
         self.request.sendall(response.encode("utf-8"))
 
