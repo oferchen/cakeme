@@ -8,9 +8,6 @@ url = "https://media.tenor.com/wa4aIHG-dT0AAAAC/eating-cake.gif"
 
 class RedirectRequestHandler(socketserver.BaseRequestHandler):
     def handle(self):
-        # Receive data from the client (if needed)
-        # data = self.request.recv(1024)
-
         response = f"HTTP/1.1 302 Found\nLocation: {url}\n\n"
         self.request.sendall(response.encode("utf-8"))
 
